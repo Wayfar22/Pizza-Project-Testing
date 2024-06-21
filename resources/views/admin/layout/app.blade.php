@@ -50,6 +50,15 @@
           </li>
 
           <li class="nav-item">
+            <a href="{{route('admin#userList')}}" class="nav-link">
+            <i class="fas fa-users"></i>
+              <p>
+                User
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a href="{{ route('admin#category')}}" class="nav-link">
               <i class="fas fa-list"></i>
               <p>
@@ -67,14 +76,6 @@
             </a>
           </li>
 
-         <li class="nav-item">
-            <a href="user.html" class="nav-link">
-            <i class="fas fa-users"></i>
-              <p>
-                User
-              </p>
-            </a>
-          </li>
 
           <li class="nav-item">
             <a href="order.html" class="nav-link">
