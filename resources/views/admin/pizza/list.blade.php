@@ -37,9 +37,14 @@
               <div class="card-header">
                 <h3 class="card-title">
                     <a href="{{ route('admin#createPizza')}}">
-                        <button class="btn btn-sm btn-dark text-white"><i class="fas fa-plus"></i></button>
+                        <button class="btn btn-sm btn-dark text-white me-3"><i class="fas fa-plus"></i></button>
                     </a>
                 </h3>
+
+                {{-- Total --}}
+                <button type="button" class=" disabled btn btn-sm btn-success">
+                    Total -  <span class="">{{$pizza->total()}}</span>
+                  </button>
 
                 <div class="card-tools">
                     <form action="{{route('admin#pizzaSearch')}}" method="get">

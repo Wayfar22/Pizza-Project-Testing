@@ -38,9 +38,14 @@
               <div class="card-header">
                 <h3 class="card-title">
                     <form method="get" action="{{route('admin#addCategory')}}">
-                        <button class="btn btn-sm btn-outline-dark">Add Category</button>
+                        <button class="btn btn-sm btn-outline-dark me-3">Add Category</button>
                     </form>
                 </h3>
+
+                {{-- Total --}}
+                <button type="button" class=" disabled btn btn-sm btn-success">
+                    Total -  <span class="">{{$category->total()}}</span>
+                  </button>
 
                 <div class="card-tools">
                   <form action="{{ route('admin#searchcategory')}}" method="get">

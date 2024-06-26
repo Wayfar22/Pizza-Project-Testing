@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Models\User;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
 {
@@ -19,8 +20,11 @@ class CategoryController extends Controller
 
     //direct admin profile
     public function category(){
-        $data = Category::paginate(7);
-        // dd($data->toArray());
+        $data = Category::select('categories.*',DB::raw('COUNT(pizzas.category_id) as count'))
+                ->leftJoin('pizzas', 'pizzas.category_id','categories.category_id')
+                ->groupBy('categories.category_id')
+                ->paginate(7);
+        dd($data->toArray());
         return view('admin.category.list')->with(['category'=>$data]);
     }
 
